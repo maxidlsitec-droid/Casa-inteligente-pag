@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartHome Solutions | Servicios de Automatización Residencial</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">SmartHome <span>Solutions</span></div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#maqueta3d">Maqueta 3D</a></li>
+        <li><a href="#empresa">Nosotros</a></li>
+        <li><button type="button" class="btn-nav js-contactar">Contactarnos</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1>Transformamos tu Hogar en una Casa Inteligente</h1>
+      <p>Diseñamos e instalamos sistemas integrados de seguridad, control ambiental y eficiencia energética adaptados a las necesidades de tu vivienda o negocio.</p>
+      <div class="hero-buttons">
+        <button type="button" class="btn-primary js-contactar">Contactarnos</button>
+        <a href="#maqueta3d" class="btn-secondary">Ver Maqueta 3D</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios ofrecidos -->
+  <section id="servicios" class="section">
+    <h2 class="section-title">Nuestras Soluciones de Automatización</h2>
+    <p class="section-subtitle">Tecnología avanzada integrada para tu confort, seguridad y ahorro energético.</p>
+
+    <div class="cards-container">
+      <div class="card">
+        <div class="card-icon">🔥</div>
+        <h3>Detección de Fuego y Humo</h3>
+        <p>Monitoreo continuo para prevenir incidentes. Activación de alarmas tempranas y protocolos de emergencia.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💡</div>
+        <h3>Iluminación Inteligente</h3>
+        <p>Encendido automático de luces según el nivel de luminosidad ambiental, reduciendo el consumo eléctrico.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌡️</div>
+        <h3>Climatización y Confort</h3>
+        <p>Control y lectura constante de temperatura y humedad para optimizar ambientes en tiempo real.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚨</div>
+        <h3>Seguridad y Proximidad</h3>
+        <p>Sensores de presencia para el control de accesos automatizados y monitoreo de intrusiones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de la Maqueta / Demo Showroom -->
+  <section id="showroom" class="section bg-light">
+    <div class="showroom-container">
+      <div class="showroom-text">
+        <span class="badge">Demostración en vivo</span>
+        <h2>Conoce Nuestra Maqueta Interactiva</h2>
+        <p>Para garantizar el óptimo funcionamiento antes de cualquier instalación a escala real, desarrollamos un <strong>prototipo a escala de demostración</strong> (60 cm de alto, 50 cm de profundidad y 25 cm de ancho).</p>
+        <p>En este showroom compacto procesamos la interacción en tiempo real entre los distintos sensores para mostrar el potencial completo de la automatización residencial.</p>
+        <ul class="showroom-list">
+          <li>✔ Pruebas de umbral de iluminación y respuesta LED</li>
+          <li>✔ Simulación de alerta ambiental (Humo/Temperatura)</li>
+          <li>✔ Activación por sensores de proximidad</li>
+        </ul>
+      </div>
+      <div class="showroom-card">
+        <div class="demo-box">
+          <h3>Simulador de Estado de Maqueta</h3>
+          <p>Haz clic en los sensores para comprobar la lógica del sistema:</p>
+
+          <div class="sensor-item" onclick="probarSensor(this, 'Sensor de Humo/Fuego')">
+            <span>🚨 Humo / Fuego</span>
+            <span class="sensor-status status-ok">OK</span>
+          </div>
+          <div class="sensor-item" onclick="probarSensor(this, 'Sensor de Proximidad')">
+            <span>📏 Proximidad</span>
+            <span class="sensor-status status-ok">OK</span>
+          </div>
+          <div class="sensor-item" onclick="probarSensor(this, 'Luminosidad / Luces')">
+            <span>💡 Umbral de Luz</span>
+            <span class="sensor-status status-ok">OK</span>
+          </div>
+          <div class="sensor-item" onclick="probarSensor(this, 'Temperatura / Humedad')">
+            <span>🌡️ Temp. / Humedad</span>
+            <span class="sensor-status status-ok">OK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maqueta 3D interactiva -->
+  <section id="maqueta3d" class="section">
+    <h2 class="section-title">Explora la Maqueta en 3D</h2>
+    <p class="section-subtitle">Mira la planta desde arriba y toca los puntos brillantes para conocer cada sensor.</p>
+    <div class="viewer3d">
+      <div class="viewer-canvas" id="maqueta3d-canvas">
+        <span class="viewer-hint">Arrastrar: girar · Clic derecho o Shift+arrastrar: mover · Rueda o pellizco: zoom</span>
+      </div>
+      <aside class="viewer-panel">
+        <div id="sensor-chips" class="sensor-chips"></div>
+        <div id="sensor-info" class="sensor-info"></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Equipo / Nosotros -->
+  <section id="empresa" class="section">
+    <h2 class="section-title">Sobre Nuestra Empresa</h2>
+    <p class="section-subtitle">Somos un equipo técnico especializado en integración de sensores y automatización.</p>
+
+    <div class="team-container">
+      <div class="team-card">
+        <div class="avatar">⚙️</div>
+        <h3>Ingeniería y Hardware</h3>
+        <p>Integración de microcontroladores y lógica de respuesta de sensores.</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">📐</div>
+        <h3>Diseño e Instalación</h3>
+        <p>Adaptación de infraestructuras para instalaciones seguras y estéticas.</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">💬</div>
+        <h3>Atención al Cliente</h3>
+        <p>Asesoramiento personalizado según las necesidades de cada proyecto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de Contacto / Cotización -->
+  <section id="contacto" class="section bg-light">
+    <h2 class="section-title">Cotiza la Automatización de tu Espacio</h2>
+    <p class="section-subtitle">Déjanos tus datos y nos pondremos en contacto para armar un plan a tu medida.</p>
+
+    <form id="cotizacionForm" class="contact-form">
+      <input type="text" id="nombre" placeholder="Nombre completo o Empresa" required>
+      <input type="email" id="email" placeholder="Correo electrónico" required>
+      <select id="servicioInteres" required>
+        <option value="" disabled selected>Selecciona el servicio que buscas</option>
+        <option value="completo">Automatización Integral del Hogar</option>
+        <option value="seguridad">Seguridad (Fuego/Humo/Presencia)</option>
+        <option value="iluminacion">Control de Iluminación y Clima</option>
+        <option value="demo">Agendar presentación de Maqueta Demo</option>
+      </select>
+      <textarea id="mensaje" rows="4" placeholder="Cuéntanos más sobre tu propiedad o proyecto..." required></textarea>
+      <button type="submit" class="btn-primary">Solicitar Presupuesto</button>
+    </form>
+    <div id="formResponse" class="form-response"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 SmartHome Solutions. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Ventana de contacto -->
+  <div id="contactModal" class="contact-modal" hidden>
+    <div class="contact-box" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+      <button type="button" id="contactClose" class="contact-close" aria-label="Cerrar">×</button>
+      <h3 id="contactTitle">Contactarnos</h3>
+      <p>Elige cómo prefieres escribirnos:</p>
+      <a class="contact-option contact-wsp" href="https://wa.me/5493757439652?text=Hola%2C%20quiero%20consultar%20por%20SmartHome%20Solutions" target="_blank" rel="noopener">
+        <span>💬 WhatsApp</span><small>375 743-9652</small>
+      </a>
+      <a class="contact-option contact-ig" href="https://instagram.com/mxxpeaking" target="_blank" rel="noopener">
+        <span>📸 Instagram</span><small>@mxxpeaking</small>
+      </a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
